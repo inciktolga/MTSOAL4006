@@ -99,7 +99,7 @@
         }
         .modal-content {
             position: relative; 
-            width: 90%; 
+            width: 95%; 
             height: 90%; 
             background: white; 
             border-radius: 8px; 
@@ -166,55 +166,4 @@
         { id: 13, title: "Smartplus Akıllı Ecza Dolabı", desc: "IoT tabanlı ilaç doz takip ve yönetim sistemi.", file: "13- Smartplus Akıllı Ecza Dolabı.pdf" },
         { id: 14, title: "Hidrojel Teknolojisi", desc: "Tarımda su tasarrufu sağlayan kontrollü mineral besleme sistemi.", file: "14- HİDROJEL AFİŞ.pdf" },
         { id: 15, title: "Toprak Solucanı Deneyi", desc: "Gübre türlerinin toprak sağlığı ve solucanlar üzerindeki etkisi.", file: "15- toprak solucanı.pdf" },
-        { id: 16, title: "Matematiksel Temelli Algoritma", desc: "Kriptografi bilincini artırmaya yönelik şifreleme yazılımı.", file: "16- matematiksel temelli algoritma.pdf" },
-        { id: 17, title: "Ormanı Sevgi Korur", desc: "Yangın yayılımını engelleyen çevre dostu biyobozunur karışım.", file: "17- ormanı sevgi korur.pdf" },
-        { id: 18, title: "Sunshine Akıllı Alanlar", desc: "Güneş enerjili akıllı yardımcı duraklar ve dinlenme alanları.", file: "18- sunshine.pdf" },
-        { id: 19, title: "Akıllı Gıda Dolabı Kiti", desc: "Engelli bireyler için gıda takip ve erişilebilirlik çözümü.", file: "19- Görme ve İşitme Engelliler İçin Akıllı Gıda Dolabı Dönüşüm Kiti.pdf" },
-        { id: 20, title: "Frenk İncirinden Biyo-Deri", desc: "Sıfır atık modeli ile bitkisel liflerden deri üretimi.", file: "20- frenk inciri afiş.pdf" }
-    ];
-
-    const projectGrid = document.getElementById('projectGrid');
-
-    // Kartları dinamik olarak oluşturma
-    projects.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <div class="card-content">
-                <h3>${p.id}. ${p.title}</h3>
-                <p>${p.desc}</p>
-                <button onclick="openModal('${encodeURIComponent(p.file)}')" class="view-btn">Afişi İncele</button>
-            </div>
-        `;
-        projectGrid.appendChild(card);
-    });
-
-    // Pencereyi açma fonksiyonu
-    function openModal(pdfUrl) {
-        const modal = document.getElementById('pdfModal');
-        const frame = document.getElementById('pdfFrame');
-        frame.src = pdfUrl;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Arka planın kaymasını durdurur
-    }
-
-    // Pencereyi kapatma fonksiyonu
-    function closeModal() {
-        const modal = document.getElementById('pdfModal');
-        const frame = document.getElementById('pdfFrame');
-        frame.src = ""; // PDF yüklemesini durdurur
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Kaydırmayı geri açar
-    }
-
-    // Modal dışına (siyah alana) tıklandığında kapatma
-    window.onclick = function(event) {
-        const modal = document.getElementById('pdfModal');
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
-</script>
-
-</body>
-</html>
+        { id: 16, title: "Matematiksel
