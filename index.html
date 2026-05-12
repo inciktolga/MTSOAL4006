@@ -1,219 +1,229 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTSOAL TÜBİTAK 4006 Bilim Fuarı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border-top: 5px solid var(--primary-color);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-        .card h3 {
-            margin: 0 0 1rem;
-            font-size: 1.1rem;
-            color: #1e3a8a;
-            min-height: 3.3rem;
-            display: flex;
-            align-items: center;
-        }
-        .card p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #64748b;
-            margin-bottom: 1.5rem;
-        }
-        .view-btn {
-            display: block;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            padding: 0.85rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: center;
-            transition: background 0.2s;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-        }
-        .view-btn:hover {
-            background-color: #1e40af;
-        }
-        #pdfModal {
-            display: none; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0,0,0,0.85); 
-            z-index: 1000; 
-            justify-content: center; 
-            align-items: center;
-        }
-        .modal-content {
-            position: relative; 
-            width: 95%; 
-            height: 92%; 
-            background: white; 
-            border-radius: 8px; 
-            overflow: hidden;
-        }
-        .close-btn {
-            position: absolute; 
-            top: 10px; 
-            right: 15px; 
-            padding: 10px 20px; 
-            background: #ef4444; 
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            z-index: 1001; 
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            padding: 3rem;
-            color: #94a3b8;
-            font-size: 0.875rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTSOAL TÜBİTAK 4006 Bilim Fuarı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--primary-color);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .card h3 {
+            margin: 0 0 1rem;
+            font-size: 1.1rem;
+            color: #1e3a8a;
+            min-height: 3.3rem;
+            display: flex;
+            align-items: center;
+        }
+        .card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        .view-btn {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.85rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+        .view-btn:hover {
+            background-color: #1e40af;
+        }
+        /* Modal Tasarımı */
+        #pdfModal {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.85); 
+            z-index: 1000; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .modal-content {
+            position: relative; 
+            width: 95%; 
+            height: 92%; 
+            background: white; 
+            border-radius: 8px; 
+            overflow: hidden;
+        }
+        .close-btn {
+            position: absolute; 
+            top: 10px; 
+            right: 15px; 
+            padding: 10px 20px; 
+            background: #ef4444; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            z-index: 1001; 
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <h1>TÜBİTAK 4006 Bilim Fuarı</h1>
-    <p>Mersin Ticaret ve Sanayi Odası Anadolu Lisesi</p>
+    <h1>TÜBİTAK 4006 Bilim Fuarı</h1>
+    <p>Mersin Ticaret ve Sanayi Odası Anadolu Lisesi</p>
 </header>
 
 <div class="container">
-    <div class="project-grid" id="projectGrid"></div>
+    <div class="project-grid" id="projectGrid"></div>
 </div>
 
 <div id="pdfModal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()">Kapat</button>
-        <iframe id="pdfFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
-    </div>
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">Kapat</button>
+        <iframe id="pdfFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
 </div>
 
 <footer>
-    &copy; 2026 MTSOAL. Bu sayfa tüm TÜBİTAK 4006 projelerimizi sergilemek için hazırlanmıştır. <br>
-    Bu Çalışmanın Hazırlanmasında Emeği Geçen öğrencimiz Adil ŞEN'e Teşekkür Ederiz.
+    &copy; 2026 MTSOAL. Bu sayfa tüm TÜBİTAK 4006 projelerimizi sergilemek için hazırlanmıştır. <br>
+    Bu Çalışmanın Hazırlanmasında Emeği Geçen öğrencimiz Adil ŞEN'e Teşekkür Ederiz.
 </footer>
 
 <script>
-    const projects = [
-        { id: 1, title: "Hava Koşullarının Bal Verimine Etkisi", desc: "Arılar için kontrollü sera ortamı simülasyonu ve veri analizi.", file: "1- Hava Koşullarının Arıların Bal Verimine Etkisinin Veri Analizi ve Tahmini .pdf" },
-        { id: 2, title: "Günlük Hayatta Matematiksel Yapılar", desc: "Doğadaki karmaşık yapıların fraktal geometri ile açıklanması.", file: "2- GÜNLÜK HAYATTA MATEMATİKSEL YAPILAR.pdf" },
-        { id: 3, title: "Afet Anında Sesli ve Işıklı Yön Göstergesi", desc: "Engelli bireyler için erişilebilir acil durum tahliye sistemi.", file: "3- AFET ANINDA SESLİ VE IŞIKLI YÖN GÖSTERGESİ.pdf" },
-        { id: 4, title: "Atıkların Sesi", desc: "Geri dönüştürülebilir atıklardan müzik enstrümanları tasarımı.", file: "4- çöplerin SESI.pdf" },
-        { id: 5, title: "KomposTech", desc: "IoT destekli hızlı biyoteknolojik kompost üretim sistemi.", file: "5- Kompostech afişi 4006.pdf" },
-        { id: 6, title: "Mavi Dönüşüm", desc: "Caretta Carettaların korunmasına yönelik yapay zeka fikirleri ve analiz.", file: "6- MAVİ DÖNÜŞÜM.pdf" },
-        { id: 7, title: "Genetik Kilit", desc: "DNA dizilimlerini kullanarak parola doğrulama algoritması modellemesi.", file: "7- Genetik kilit-dna algoritmasi ile temel sifre olusturma 2.pdf" },
-        { id: 8, title: "Portakal Sayar", desc: "İHA görüntüleri ve no-code yapay zeka ile tarımsal analiz.", file: "8- Portakal Sayar.pdf" },
-        { id: 9, title: "Drosophila Çekici Tuzak", desc: "Ekolojik yöntemlerle meyve sineği popülasyon kontrolü.", file: "9-Drosophila Cekici Tuzak.PDF" },
-        { id: 10, title: "Genetik Kod Çözücü", desc: "Biyolojik diziler üzerinden algoritma ve veri işleme mantığı.", file: "10-Genetik kod Cozucu.PDF" },
-        { id: 11, title: "Dijital Sesim (Fragaria)", desc: "Türkçe dil desteğine sahip erişilebilir ADİS uygulaması.", file: "11- DİJİTAL SESİM AFİŞ.pdf" },
-        { id: 12, title: "Sadık Dostum", desc: "Görme engelliler için ivmeölçerli ve engelli algılayıcı broş.", file: "12- Sadık Dostum  proje (5).pdf" },
-        { id: 13, title: "Smartplus Akıllı Ecza Dolabı", desc: "IoT tabanlı ilaç doz takip ve yönetim sistemi.", file: "13- Smartplus Akıllı Ecza Dolabı.pdf" },
-        { id: 14, title: "Hidrojel Teknolojisi", desc: "Tarımda su tasarrufu sağlayan kontrollü mineral besleme sistemi.", file: "14- HİDROJEL AFİŞ.pdf" },
-        { id: 15, title: "Toprak Solucanı Deneyi", desc: "Gübre türlerinin toprak sağlığı ve solucanlar üzerindeki etkisi.", file: "15- toprak solucanı.pdf" },
-        { id: 16, title: "Matematiksel Temelli Algoritma", desc: "Kriptografi bilincini artırmaya yönelik şifreleme yazılımı.", file: "16- matematiksel temelli algoritma.pdf" },
-        { id: 17, title: "Ormanı Sevgi Korur", desc: "Yangın yayılımını engelleyen çevre dostu biyobozunur karışım.", file: "17- ormanı sevgi korur.pdf" },
-        { id: 18, title: "Sunshine Akıllı Alanlar", desc: "Güneş enerjili akıllı yardımcı duraklar ve dinlenme alanları.", file: "18- sunshine.pdf" },
-        { id: 19, title: "Akıllı Gıda Dolabı Kiti", desc: "Engelli bireyler için gıda takip ve erişilebilirlik çözümü.", file: "19- Görme ve İşitme Engelliler İçin Akıllı Gıda Dolabı Dönüşüm Kiti.pdf" },
-        { id: 20, title: "Frenk İncirinden Biyo-Deri", desc: "Sıfır atık modeli ile bitkisel liflerden deri üretimi.", file: "20- frenk inciri afiş.pdf" }
-    ];
+    const projects = [
+        { id: 1, title: "Hava Koşullarının Bal Verimine Etkisi", desc: "Arılar için kontrollü sera ortamı simülasyonu ve veri analizi.", file: "1- Hava Koşullarının Arıların Bal Verimine Etkisinin Veri Analizi ve Tahmini .pdf" },
+        { id: 2, title: "Günlük Hayatta Matematiksel Yapılar", desc: "Doğadaki karmaşık yapıların fraktal geometri ile açıklanması.", file: "2- GÜNLÜK HAYATTA MATEMATİKSEL YAPILAR.pdf" },
+        { id: 3, title: "Afet Anında Sesli ve Işıklı Yön Göstergesi", desc: "Engelli bireyler için erişilebilir acil durum tahliye sistemi.", file: "3- AFET ANINDA SESLİ VE IŞIKLI YÖN GÖSTERGESİ.pdf" },
+        { id: 4, title: "Atıkların Sesi", desc: "Geri dönüştürülebilir atıklardan müzik enstrümanları tasarımı.", file: "4- çöplerin SESI.pdf" },
+        { id: 5, title: "KomposTech", desc: "IoT destekli hızlı biyoteknolojik kompost üretim sistemi.", file: "5- Kompostech afişi 4006.pdf" },
+        { id: 6, title: "Mavi Dönüşüm", desc: "Caretta Carettaların korunmasına yönelik yapay zeka fikirleri ve analiz.", file: "6- MAVİ DÖNÜŞÜM.pdf" },
+        { id: 7, title: "Genetik Kilit", desc: "DNA dizilimlerini kullanarak parola doğrulama algoritması modellemesi.", file: "7- Genetik kilit-dna algoritmasi ile temel sifre olusturma 2.pdf" },
+        { id: 8, title: "Portakal Sayar", desc: "İHA görüntüleri ve no-code yapay zeka ile tarımsal analiz.", file: "8- Portakal Sayar.pdf" },
+        { id: 9, title: "Drosophila Çekici Tuzak", desc: "Ekolojik yöntemlerle meyve sineği popülasyon kontrolü.", file: "9-Drosophila Cekici Tuzak.PDF" },
+        { id: 10, title: "Genetik Kod Çözücü", desc: "Biyolojik diziler üzerinden algoritma ve veri işleme mantığı.", file: "10-Genetik kod Cozucu.PDF" },
+        { id: 11, title: "Dijital Sesim (Fragaria)", desc: "Türkçe dil desteğine sahip erişilebilir ADİS uygulaması.", file: "11- DİJİTAL SESİM AFİŞ.pdf" },
+        { id: 12, title: "Sadık Dostum", desc: "Görme engelliler için ivmeölçerli ve engelli algılayıcı broş.", file: "12- Sadık Dostum  proje (5).pdf" },
+        { id: 13, title: "Smartplus Akıllı Ecza Dolabı", desc: "IoT tabanlı ilaç doz takip ve yönetim sistemi.", file: "13- Smartplus Akıllı Ecza Dolabı.pdf" },
+        { id: 14, title: "Hidrojel Teknolojisi", desc: "Tarımda su tasarrufu sağlayan kontrollü mineral besleme sistemi.", file: "14- HİDROJEL AFİŞ.pdf" },
+        { id: 15, title: "Toprak Solucanı Deneyi", desc: "Gübre türlerinin toprak sağlığı ve solucanlar üzerindeki etkisi.", file: "15- toprak solucanı.pdf" },
+        { id: 16, title: "Matematiksel Temelli Algoritma", desc: "Kriptografi bilincini artırmaya yönelik şifreleme yazılımı.", file: "16- matematiksel temelli algoritma.pdf" },
+        { id: 17, title: "Ormanı Sevgi Korur", desc: "Yangın yayılımını engelleyen çevre dostu biyobozunur karışım.", file: "17- ormanı sevgi korur.pdf" },
+        { id: 18, title: "Sunshine Akıllı Alanlar", desc: "Güneş enerjili akıllı yardımcı duraklar ve dinlenme alanları.", file: "18- sunshine.pdf" },
+        { id: 19, title: "Akıllı Gıda Dolabı Kiti", desc: "Engelli bireyler için gıda takip ve erişilebilirlik çözümü.", file: "19- Görme ve İşitme Engelliler İçin Akıllı Gıda Dolabı Dönüşüm Kiti.pdf" },
+        { id: 20, title: "Frenk İncirinden Biyo-Deri", desc: "Sıfır atık modeli ile bitkisel liflerden deri üretimi.", file: "20- frenk inciri afiş.pdf" }
+    ];
 
-    const projectGrid = document.getElementById('projectGrid');
+    const projectGrid = document.getElementById('projectGrid');
 
-    projects.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <div class="card-content">
-                <h3>${p.id}. ${p.title}</h3>
-                <p>${p.desc}</p>
-                <button onclick="openPdf('${encodeURIComponent(p.file)}')" class="view-btn">Afişi İncele</button>
-            </div>
-        `;
-        projectGrid.appendChild(card);
-    });
+    projects.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="card-content">
+                <h3>${p.id}. ${p.title}</h3>
+                <p>${p.desc}</p>
+                <button onclick="prepareAndOpenModal('${encodeURIComponent(p.file)}')" class="view-btn">Afişi İncele</button>
+            </div>
+        `;
+        projectGrid.appendChild(card);
+    });
 
-    function openPdf(encodedFile) {
-        const modal = document.getElementById('pdfModal');
-        const frame = document.getElementById('pdfFrame');
-        
-        // Google Viewer yerine doğrudan dosya yolunu kullanıyoruz
-        // Bu yöntem tarayıcının kendi PDF göstericisini açar (Daha güvenilirdir)
-        const pdfUrl = decodeURIComponent(encodedFile);
-        
-        frame.src = pdfUrl;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
+    function prepareAndOpenModal(encodedFile) {
+        // Tarayıcıdaki mevcut URL'yi (index.html'in olduğu yeri) alıyoruz
+        const baseUrl = window.location.href.split('#')[0].split('?')[0];
+        const baseDir = baseUrl.substring(0, baseUrl.lastIndexOf('/'));
+        
+        // PDF'in tam internet adresini oluşturuyoruz
+        const fullPdfUrl = baseDir + '/' + decodeURIComponent(encodedFile);
+        
+        // Google Viewer URL'si oluşturma
+        const googleViewerUrl = "https://docs.google.com/viewer?url=" + encodeURIComponent(fullPdfUrl) + "&embedded=true";
+        
+        openModal(googleViewerUrl);
+    }
 
-    function closeModal() {
-        const modal = document.getElementById('pdfModal');
-        const frame = document.getElementById('pdfFrame');
-        frame.src = ""; 
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
+    function openModal(url) {
+        const modal = document.getElementById('pdfModal');
+        const frame = document.getElementById('pdfFrame');
+        frame.src = url;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
 
-    window.onclick = function(event) {
-        const modal = document.getElementById('pdfModal');
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
+    function closeModal() {
+        const modal = document.getElementById('pdfModal');
+        const frame = document.getElementById('pdfFrame');
+        frame.src = ""; 
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('pdfModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
 </script>
 
 </body>
