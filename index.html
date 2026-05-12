@@ -84,7 +84,6 @@
         .view-btn:hover {
             background-color: #1e40af;
         }
-        /* Modal Tasarımı */
         #pdfModal {
             display: none; 
             position: fixed; 
@@ -162,7 +161,7 @@
         { id: 9, title: "Drosophila Çekici Tuzak", desc: "Ekolojik yöntemlerle meyve sineği popülasyon kontrolü.", file: "9-Drosophila Cekici Tuzak.PDF" },
         { id: 10, title: "Genetik Kod Çözücü", desc: "Biyolojik diziler üzerinden algoritma ve veri işleme mantığı.", file: "10-Genetik kod Cozucu.PDF" },
         { id: 11, title: "Dijital Sesim (Fragaria)", desc: "Türkçe dil desteğine sahip erişilebilir ADİS uygulaması.", file: "11- DİJİTAL SESİM AFİŞ.pdf" },
-        { id: 12, title: "Sadık Dostum", desc: "Görme engelliler için ivmeölçerli ve engelli algılayıcı broş.", file: "12- Sadık Dostum  proje (5).pdf" },
+        { id: 12, title: "Sadık Dostum", desc: "Görme engelliler için ivmeölçerli ve engelli algılayıcı broş.", file: "12- Sadık Dostum  proje (5).pdf" },
         { id: 13, title: "Smartplus Akıllı Ecza Dolabı", desc: "IoT tabanlı ilaç doz takip ve yönetim sistemi.", file: "13- Smartplus Akıllı Ecza Dolabı.pdf" },
         { id: 14, title: "Hidrojel Teknolojisi", desc: "Tarımda su tasarrufu sağlayan kontrollü mineral besleme sistemi.", file: "14- HİDROJEL AFİŞ.pdf" },
         { id: 15, title: "Toprak Solucanı Deneyi", desc: "Gübre türlerinin toprak sağlığı ve solucanlar üzerindeki etkisi.", file: "15- toprak solucanı.pdf" },
@@ -182,30 +181,21 @@
             <div class="card-content">
                 <h3>${p.id}. ${p.title}</h3>
                 <p>${p.desc}</p>
-                <button onclick="prepareAndOpenModal('${encodeURIComponent(p.file)}')" class="view-btn">Afişi İncele</button>
+                <button onclick="openPdf('${encodeURIComponent(p.file)}')" class="view-btn">Afişi İncele</button>
             </div>
         `;
         projectGrid.appendChild(card);
     });
 
-    function prepareAndOpenModal(encodedFile) {
-        // Tarayıcıdaki mevcut URL'yi (index.html'in olduğu yeri) alıyoruz
-        const baseUrl = window.location.href.split('#')[0].split('?')[0];
-        const baseDir = baseUrl.substring(0, baseUrl.lastIndexOf('/'));
-        
-        // PDF'in tam internet adresini oluşturuyoruz
-        const fullPdfUrl = baseDir + '/' + decodeURIComponent(encodedFile);
-        
-        // Google Viewer URL'si oluşturma
-        const googleViewerUrl = "https://docs.google.com/viewer?url=" + encodeURIComponent(fullPdfUrl) + "&embedded=true";
-        
-        openModal(googleViewerUrl);
-    }
-
-    function openModal(url) {
+    function openPdf(encodedFile) {
         const modal = document.getElementById('pdfModal');
         const frame = document.getElementById('pdfFrame');
-        frame.src = url;
+        
+        // Google Viewer yerine doğrudan dosya yolunu kullanıyoruz
+        // Bu yöntem tarayıcının kendi PDF göstericisini açar (Daha güvenilirdir)
+        const pdfUrl = decodeURIComponent(encodedFile);
+        
+        frame.src = pdfUrl;
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
